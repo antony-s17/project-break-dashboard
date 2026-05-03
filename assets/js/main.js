@@ -1,3 +1,3 @@
-import { randomBackground } from "./utils/utils.js";
+import { randomBackground } from "./utils/background.js";
 
 randomBackground();
