@@ -1,0 +1,10 @@
+body {
+  background-color: #000;
+  font-family: 'Poppins', sans-serif;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 1s ease;
+  color: white;
+}
