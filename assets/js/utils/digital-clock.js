@@ -43,16 +43,13 @@ const getTime = () => {
 }
 
 const plantillaCard = (objectDate) => {
-    const card = document.getElementById("container-clock");
-    console.log("hola");
+    const card = document.getElementById("clockCard");
     card.innerHTML = `
-        <p>Son las...</p>
-        <h2>${objectDate.hour}:${objectDate.minute}:${objectDate.second}</h2>
-        <h3>${objectDate.date}/${objectDate.month}/${objectDate.year} ${objectDate.amPm}</h3>
+        <p class="clock-label">It's...</p>
+        <h1 class="clock-time">${objectDate.hour}:${objectDate.minute}:${objectDate.second}</h2>
+        <h2 class="clock-message">${objectDate.date}/${objectDate.month}/${objectDate.year} ${objectDate.amPm}</h3>
         <p>${objectDate.greeting()}</p>
     `
 }
 
 updateTime();
-
-//<></>
