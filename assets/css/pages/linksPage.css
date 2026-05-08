@@ -1,0 +1,216 @@
+.favorites-container {
+  position: relative;
+  z-index: 1;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 6rem 2rem 2rem;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.favorites-card {
+  width: 100%;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  padding: 2rem;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.favorites-title {
+  text-align: center;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+
+  font-weight: 500;
+
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.favorites-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+/* =========================
+   LINKS CONTAINER
+========================= */
+
+#container-favorites-links {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(140px, 1fr));
+
+  gap: 1rem;
+
+  max-height: 420px;
+
+  overflow-y: auto;
+
+  padding-right: 0.5rem;
+}
+
+/* =========================
+   LINK CARD
+========================= */
+
+.favorite-link {
+  position: relative;
+
+  min-height: 85px;
+
+  padding: 1rem 0.8rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.favorite-link a {
+  font-size: 1.4rem;
+
+  font-weight: 500;
+
+  word-break: break-word;
+}
+
+/* delete button */
+
+.favorite-link button {
+  position: absolute;
+
+  top: 0.5rem;
+  right: 0.5rem;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.08);
+
+  color: white;
+
+  font-size: 1rem;
+
+  transition: var(--transition);
+}
+
+.favorite-link-anchor {
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  word-break: break-word;
+
+  transition: var(--transition);
+}
+
+.favorite-link button:hover {
+  background: rgba(255,255,255,0.18);
+
+  transform: scale(1.1);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+#container-favorites-links::-webkit-scrollbar {
+  width: 8px;
+}
+
+#container-favorites-links::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.08);
+
+  border-radius: 20px;
+}
+
+#container-favorites-links::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+
+  border-radius: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.bottom-bar {
+  position: fixed;
+
+  bottom: 1.5rem;
+  right: 2rem;
+
+  z-index: 5;
+}
+
+.bottom-icons {
+  display: flex;
+  gap: 1.5rem;
+
+  font-size: 2rem;
+}
+
+.bottom-icons span {
+  opacity: 0.85;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.bottom-icons span:hover {
+  transform: scale(1.12);
+
+  opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .favorites-container {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .favorites-card {
+    padding: 1.5rem;
+  }
+
+  #container-favorites-links {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-icons {
+    font-size: 1.5rem;
+
+    gap: 1rem;
+  }
+}

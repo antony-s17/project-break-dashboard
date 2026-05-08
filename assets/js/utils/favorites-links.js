@@ -26,8 +26,9 @@ const initFavoritesLinks = () => {
 
     const addLinkToFavorites = (urlName, url) => {
         containerFavoritesLinks.innerHTML += `
-            <div class="favorite-link">
-                <a href="${url}" target="_blank">${urlName}</a>
+            <div class="favorite-link glass-card">
+                <button class="favorite-link-delete">X</button>
+                <a class="favorite-link-anchor" href="${url}" target="_blank">${urlName}</a>
             </div>
         `;
     }

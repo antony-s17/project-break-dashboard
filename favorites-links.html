@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/pages/linksPage.css" />
     <script type="module" src="assets/js/main.js"></script>
     <script type="module" src="assets/js/utils/favorites-links.js"></script>
     <title>Favorites Links</title>
 </head>
 <body id="body">
-    <main class="main-container">
-        <h1>Add your favorite links</h1>
-        <input type="text" id="urlName" placeholder="Name for your link" autofocus>
-        <input type="text" id="url" placeholder="Paste your link here">
-        <button id="addLink">Add link</button>
-        <div id="container-favorites-links">
-        </div>
+    <main class="favorites-container">
+        <section class="favorite-card">
+            <h1 class="favorites-title">Add your favorite links 🔗</h1>
+            <div class="favorites-form">
+                <input type="text" class="input-control" id="urlName" placeholder="Name for your link" autofocus>
+                <input type="text" class="input-control" id="url" placeholder="Paste your link here">
+                <button class="button-primary" id="addLink">Add link</button>
+                <div id="container-favorites-links">
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
