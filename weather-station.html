@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/pages/weatherPage.css" />
     <script type="module" src="assets/js/main.js"></script>
     <script type="module" src="assets/js/utils/weather-station.js"></script>
     <title>Weather Station</title>
 </head>
 <body id="body">
-    <div id="container-weather">
-        <div id="city"></div>
-        <div id="current-weather"></div>
-        <div id="hour-weather"></div>
-    </div>
+    <main class="weather-container">
+        <section class="weather-card glass-card">
+            <div id="container-weather">
+                <div class="weather-city" id="weather-city"></div>
+                <div class="current-weather" id="current-weather"></div>
+                <div class="hour-weather" id="hour-weather"></div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

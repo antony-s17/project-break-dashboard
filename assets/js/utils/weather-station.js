@@ -1,33 +1,36 @@
 const getWeatherStation = async() => {
     try {
-        const cityElement = document.getElementById("city");
-        const currentWeather = document.getElementById("current-weather");
-        if (!cityElement || !currentWeather) {
+        const weatherCityContainer = document.getElementById("weather-city");
+        const currentWeatherContainer = document.getElementById("current-weather");
+        const hourWeatherContainer = document.getElementById("hour-weather");
+        if (!weatherCityContainer || !currentWeatherContainer || !hourWeatherContainer) {
             throw new Error("City or current weather not found");
         }
         const apiKey = "26fd2f7ef9a0452cb9914702262604";
         const city = "Arequipa";
         const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&aqi=no`);
         const data = await response.json();
-        cityElement.textContent = `${data.location.name} / ${data.location.country}`;
-        currentWeather.innerHTML = `
-            <p>${data.current.condition.text}</p>
-            <img src="${data.current.condition.icon}" alt="${data.current.condition.text}">
-            <div>
-                <p>Temperature: ${data.current.temp_c}°C - ${data.current.temp_f}°F</p>
-                <p>Precipitation: ${data.current.precip_mm}%</p>
-                <p>Humidity: ${data.current.humidity}%</p>
-                <p>Wind Speed: ${data.current.wind_kph} km/h</p>
+        weatherCityContainer.innerHTML = `<h2 class="weather-city">${data.location.name} / ${data.location.country}</h2>`;
+        currentWeatherContainer.innerHTML = `
+            <div class="weather-current-main">
+                <h3 class="weather-main">${data.current.condition.text}</h3>
+                <img class="weather-main-icon" src="${data.current.condition.icon}" alt="${data.current.condition.text}">
+                <div class="weather-details">
+                    <p>Precipitation: ${data.current.precip_mm}%</p>
+                    <p>Humidity: ${data.current.humidity}%</p>
+                    <p>Wind Speed: ${data.current.wind_kph} km/h</p>
+                </div>
             </div>
         `;
         //recover forecast data
         const hourWeather = data.forecast.forecastday[0].hour;
+        console.log(hourWeather);
         hourWeather.forEach(hour => {
-            currentWeather.innerHTML += `
-                <div>
-                    <p>${hour.condition.text} - ${hour.time}</p>
-                    <img src="${hour.condition.icon}" alt="${hour.condition.text}">
-                    <p>${hour.temp_c}°C</p>
+            hourWeatherContainer.innerHTML += `
+                <div class="weather-item">
+                    <p class="weather-time">${hour.condition.text} - ${hour.time}</p>
+                    <img class="weather-hour-icon" src="${hour.condition.icon}" alt="${hour.condition.text}">
+                    <p class="weather-temp">${hour.temp_c}°C</p>
                 </div>
             `;
         })
