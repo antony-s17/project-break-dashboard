@@ -6,16 +6,16 @@ const randomBackground = () => {
     //pre-load images
     images.forEach(img => {
         const preload = new Image();
-        preload.src = `../../assets/images/${img}`;
+        preload.src = `./assets/images/${img}`;
     });
     //initial background
     let i = Math.floor(Math.random() * images.length);
-    body.style.background = `url("../../assets/images/${images[i]}") no-repeat center / cover fixed`;
+    body.style.background = `url("./assets/images/${images[i]}") no-repeat center / cover fixed`;
     
     //change background every 15 seconds
     setInterval(() => {
         i = Math.floor(Math.random() * images.length);
-        body.style.background = `url("../../assets/images/${images[i]}") no-repeat center / cover fixed`;
+        body.style.background = `url("./assets/images/${images[i]}") no-repeat center / cover fixed`;
     }, 15000);
 }
 
