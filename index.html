@@ -5,10 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="assets/css/pages/dashboardPage.css" />
+    <link rel="stylesheet" href="assets/css/pages/clockPage.css" />
+    <link rel="stylesheet" href="assets/css/pages/linksPage.css" />
+    <link rel="stylesheet" href="assets/css/pages/passwordPage.css" />
+    <link rel="stylesheet" href="assets/css/pages/weatherPage.css" />
     <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/utils/digital-clock.js"></script>
+    <script type="module" src="assets/js/utils/favorites-links.js"></script>
+    <script type="module" src="assets/js/utils/generate-password.js"></script>
+    <script type="module" src="assets/js/utils/weather-station.js"></script>
     <title>Dashboard</title>
 </head>
-<body id="body">
-    
+<body class="dashboard-page" id="body">
+    <div id="header"></div>
+    <main class="dashboard-layout">
+        <section class="dashboard-left">
+            <div class="favorites-container">
+                <section class="favorite-card glass-card">
+                    <h1 class="favorites-title">Add your favorite links 🔗</h1>
+                    <div class="favorites-form">
+                        <input type="text" class="input-control" id="urlName" placeholder="Name for your link" autofocus>
+                        <input type="text" class="input-control" id="url" placeholder="Paste your link here">
+                        <button class="button-primary" id="addLink">Add link</button>
+                    </div>
+                    <div id="container-favorites-links">
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section class="dashboard-center">
+            <div class="password-container">
+                <section class="password-card glass-card">
+                    <div class="password-content">
+                        <h1 class="password-title">Generate Secure Password</h1>
+                        <p class="password-description">Enter the number of characters for your password</p>
+                    </div>
+                    <div class="password-form">
+                        <input type="number" class="password-input" id="passwordLength" min="1" max="256" autofocus>
+                        <button type="button" class="password-button" id="btnGeneratePassword">Generate Password</button>
+                    </div>
+                    <div class="password-result glass-secondary hidden" id="container-password">
+                    </div>
+                </section>
+            </div>
+            <div class="clock-container">
+                <section class="clock-card glass-card" id="clockCard">
+                </section>
+            </div>
+        </section>
+        <section class="dashboard-right">
+            <div class="weather-container">
+                <section class="weather-card glass-card">
+                    <div id="container-weather">
+                        <div class="weather-city" id="weather-city"></div>
+                        <div class="current-weather" id="current-weather"></div>
+                        <div class="hour-weather" id="hour-weather"></div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

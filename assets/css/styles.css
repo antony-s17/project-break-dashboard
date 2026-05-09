@@ -1,28 +1,15 @@
 :root {
   --color-white: #ffffff;
-
   --glass-bg: rgba(18, 18, 18, 0.22);
-
   --glass-border: rgba(255, 255, 255, 0.12);
-
   --shadow-dark: rgba(0, 0, 0, 0.35);
-
   --button-bg: rgba(0, 0, 0, 0.45);
-
   --button-hover: rgba(0, 0, 0, 0.65);
-
   --button-text: #d1d5db;
-
   --input-bg: rgba(255, 255, 255, 0.08);
-
   --transition: 0.3s ease;
-
   --radius: 24px;
 }
-
-/* =========================
-   GLOBAL
-========================= */
 
 html {
   font-size: 16px;
@@ -30,101 +17,59 @@ html {
 }
 
 body {
+  padding-top: 40px;
   min-height: 100vh;
-
   font-family: 'Poppins', sans-serif;
-
   color: var(--color-white);
-
   background-color: #000;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   transition: background-image 1s ease;
-
   position: relative;
-
-  overflow: hidden;
-
+  overflow-x: hidden;
+  overflow-y: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 .main-header {
   position: fixed;
-
   top: 1rem;
   left: 50%;
-
   transform: translateX(-50%);
-
   width: calc(100% - 2rem);
   max-width: 1200px;
-
   padding: 1rem 1.5rem;
-
   border-radius: var(--radius);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   z-index: 999;
 }
 
 .header-logo {
   font-size: 1.1rem;
-
   font-weight: 700;
-
   color: var(--color-white);
-
   transition: var(--transition);
 }
 
 .header-logo:hover {
   opacity: 0.8;
-
   transform: translateY(-2px);
 }
 
-/* =========================
-   OVERLAY
-========================= */
-
 body::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.35)
-    );
-
+  background:linear-gradient(to bottom,rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.35));
   z-index: 0;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
   line-height: 1.2;
 }
@@ -134,14 +79,9 @@ a {
   color: inherit;
 }
 
-ul,
-ol {
+ul,ol {
   list-style: none;
 }
-
-/* =========================
-   MEDIA
-========================= */
 
 img {
   max-width: 100%;
@@ -149,14 +89,7 @@ img {
   display: block;
 }
 
-/* =========================
-   FORM ELEMENTS
-========================= */
-
-button,
-input,
-textarea,
-select {
+button,input,textarea,select {
   font: inherit;
 }
 
@@ -165,31 +98,17 @@ button {
   border: none;
 }
 
-/* =========================
-   TABLE
-========================= */
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* =========================
-   REUSABLE CLASSES
-========================= */
-
 .glass-card {
   background: var(--glass-bg);
-
   backdrop-filter: blur(18px);
-
   border: 1px solid var(--glass-border);
-
   border-radius: var(--radius);
-
-  box-shadow:
-    0 10px 40px var(--shadow-dark);
-
+  box-shadow: 0 10px 40px var(--shadow-dark);
   transition: var(--transition);
 }
 
@@ -199,19 +118,12 @@ table {
 
 .input-control {
   width: 100%;
-
   padding: 1rem;
-
   border-radius: 14px;
-
   border: 1px solid rgba(255,255,255,0.15);
-
   background: var(--input-bg);
-
   color: var(--color-white);
-
   outline: none;
-
   transition: var(--transition);
 }
 
@@ -225,19 +137,12 @@ table {
 
 .button-primary {
   width: 100%;
-
   padding: 1rem;
-
   border-radius: 14px;
-
   border: none;
-
   background: var(--button-bg);
-
   color: var(--button-text);
-
   font-weight: 600;
-
   transition: var(--transition);
 }
 
@@ -246,10 +151,6 @@ table {
 
   opacity: 0.95;
 }
-
-/* =========================
-   FLEX UTILITIES
-========================= */
 
 .flex-center {
   display: flex;
@@ -262,9 +163,9 @@ table {
   flex-direction: column;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.hidden {
+  opacity: 0;
+}
 
 @media (max-width: 768px) {
   html {

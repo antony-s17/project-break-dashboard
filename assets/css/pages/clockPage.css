@@ -1,161 +1,52 @@
 .clock-container {
   position: relative;
   z-index: 1;
-
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 2rem;
 }
-
-/* =========================
-   CLOCK CARD
-========================= */
 
 .clock-card {
   width: 100%;
   max-width: 540px;
-
   padding: 2.5rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 0.8rem;
-
   text-align: center;
 }
 
-/* =========================
-   CLOCK TEXT
-========================= */
-
 .clock-label {
   font-size: 1.2rem;
-
   font-weight: 400;
-
   opacity: 0.85;
-
   letter-spacing: 1px;
 }
 
 .clock-time {
   font-size: clamp(4rem, 10vw, 6.5rem);
-
   font-weight: 200;
-
   line-height: 1;
-
   letter-spacing: 3px;
-
   text-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .clock-date {
   font-size: clamp(1.5rem, 5vw, 2.2rem);
-
   font-weight: 300;
-
   opacity: 0.95;
 }
 
 .clock-message {
   margin-top: 1rem;
-
   font-size: 1.05rem;
-
   font-weight: 300;
-
   opacity: 0.9;
-
   max-width: 400px;
 }
-
-/* =========================
-   TOP BAR
-========================= */
-
-.top-bar {
-  position: absolute;
-
-  top: 1.5rem;
-  left: 2rem;
-
-  z-index: 2;
-
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-
-  font-size: 1.1rem;
-
-  font-weight: 500;
-
-  letter-spacing: 1px;
-
-  opacity: 0.9;
-}
-
-/* =========================
-   BOTTOM BAR
-========================= */
-
-.bottom-bar {
-  position: absolute;
-
-  bottom: 2rem;
-  right: 2rem;
-
-  z-index: 2;
-}
-
-/* decorative line */
-
-.bottom-bar::before {
-  content: "";
-
-  position: absolute;
-
-  top: -1.2rem;
-  right: 0;
-
-  width: 260px;
-  height: 1px;
-
-  background: rgba(255,255,255,0.3);
-}
-
-.bottom-icons {
-  display: flex;
-  align-items: center;
-
-  gap: 1.5rem;
-
-  font-size: 1.8rem;
-}
-
-.bottom-icons span {
-  opacity: 0.85;
-
-  cursor: pointer;
-
-  transition: var(--transition);
-}
-
-.bottom-icons span:hover {
-  transform: scale(1.12);
-
-  opacity: 1;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 768px) {
 
