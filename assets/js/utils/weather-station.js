@@ -10,11 +10,15 @@ const getWeatherStation = async() => {
         const city = "Arequipa";
         const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&aqi=no`);
         const data = await response.json();
+        const temperatureIcon = data.current.temp_c > 38 ? "https://res.cloudinary.com/ddzxpi7rk/image/upload/v1778349771/temperature-high_zctvkq.png" : "https://res.cloudinary.com/ddzxpi7rk/image/upload/v1778350043/temperature-down_otigrd.png";
         weatherCityContainer.innerHTML = `<h2 class="weather-city">${data.location.name} / ${data.location.country}</h2>`;
         currentWeatherContainer.innerHTML = `
             <div class="weather-current-main">
-                <h3 class="weather-main">${data.current.condition.text}</h3>
-                <img class="weather-main-icon" src="${data.current.condition.icon}" alt="${data.current.condition.text}">
+                <h2 class="weather-main">${data.current.condition.text}</h2>
+                <div class="weather-images">
+                    <img class="weather-main-icon" src="${data.current.condition.icon}" alt="${data.current.condition.text}">
+                    <img class="weather-main-icon" src="${temperatureIcon}" alt="${data.current.temp_c}°">
+                </div>
                 <div class="weather-details">
                     <p>Precipitation: ${data.current.precip_mm}%</p>
                     <p>Humidity: ${data.current.humidity}%</p>
@@ -24,7 +28,6 @@ const getWeatherStation = async() => {
         `;
         //recover forecast data
         const hourWeather = data.forecast.forecastday[0].hour;
-        console.log(hourWeather);
         hourWeather.forEach(hour => {
             hourWeatherContainer.innerHTML += `
                 <div class="weather-item">

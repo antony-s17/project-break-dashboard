@@ -1,19 +1,12 @@
 .weather-container {
   position: relative;
   z-index: 1;
-
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 2rem;
 }
-
-/* =========================
-   WEATHER CARD
-========================= */
 
 .weather-card {
   width: 90%;
@@ -22,60 +15,37 @@
   padding: 2rem;
 }
 
-/* =========================
-   WEATHER CONTENT
-========================= */
-
 #container-weather {
   display: flex;
   flex-direction: column;
-
   gap: 2rem;
 }
-
-/* =========================
-   CITY
-========================= */
 
 .weather-city {
   font-size: clamp(2.2rem, 5vw, 4rem);
-
   font-weight: 500;
-
   text-align: center;
-
   text-shadow: 0 4px 20px rgba(0,0,0,0.35);
 }
 
-/* =========================
-   CURRENT WEATHER
-========================= */
-
 .current-weather {
   display: flex;
-
-  justify-content: space-between;
-
+  justify-content: center;
+  text-align: center;
   align-items: center;
-
   gap: 2rem;
-
   flex-wrap: wrap;
 }
 
 .weather-current-left {
   display: flex;
-
   align-items: center;
-
   gap: 1rem;
 }
 
 .temperature {
   font-size: clamp(3rem, 7vw, 5rem);
-
   font-weight: 200;
-
   line-height: 1;
 }
 
@@ -85,19 +55,17 @@
 
 .weather-details {
   display: flex;
-
   flex-direction: column;
-
   gap: 0.5rem;
-
   font-size: 1.1rem;
-
   opacity: 0.95;
 }
 
-/* =========================
-   HOURLY WEATHER
-========================= */
+.weather-images {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 .hour-weather {
   display: flex;
@@ -117,78 +85,46 @@
 
 .hour-weather::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.2);
-
   border-radius: 999px;
 }
 
-/* =========================
-   WEATHER ITEM
-========================= */
-
 .weather-item {
   min-width: 110px;
-
   padding: 1rem;
-
   border-radius: 20px;
-
   background: rgba(255,255,255,0.08);
-
   backdrop-filter: blur(12px);
-
   text-align: center;
-
   flex-shrink: 0;
-
   transition: 0.3s ease;
 }
 
 .weather-item:hover {
   transform: translateY(-5px);
-
   background: rgba(255,255,255,0.14);
 }
 
-/* =========================
-   WEATHER ITEM CONTENT
-========================= */
-
 .weather-time {
   font-size: 1rem;
-
   font-weight: 500;
-
   margin-bottom: 0.5rem;
 }
 
 .weather-hour-icon {
   width: 52px;
-
   margin: 0 auto;
 }
 
 .weather-temp {
   margin-top: 0.5rem;
-
   font-size: 1rem;
-
   font-weight: 500;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 768px) {
 
   .weather-card {
     padding: 1.5rem;
-  }
-
-  .current-weather {
-    justify-content: center;
-
-    text-align: center;
   }
 
   .weather-current-left {
@@ -218,7 +154,6 @@
 
   .weather-item {
     min-width: 95px;
-
     padding: 0.8rem;
   }
 
