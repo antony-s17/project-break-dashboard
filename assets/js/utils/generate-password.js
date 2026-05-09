@@ -20,12 +20,13 @@ const initPassword = () => {
                 throw new Error("Error to generate password");
             }
             containerPassword.innerHTML = `
-                <p>Your generated password is:</p>
-                <h2>${password}</h2>    
+                <h2 class="password-result-title">Your generated password is:</h2>
+                <p class="generated-password">${password}</p>    
             `
         } catch(error) {
             alert(error.message);
         }
+        containerPassword.classList.remove("hidden");
     });
 }
 
