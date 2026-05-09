@@ -16,7 +16,7 @@ const randomBackground = () => {
     setInterval(() => {
         i = Math.floor(Math.random() * images.length);
         body.style.background = `url("../../assets/images/${images[i]}") no-repeat center / cover fixed`;
-    }, 3000);
+    }, 15000);
 }
 
 export { randomBackground };
