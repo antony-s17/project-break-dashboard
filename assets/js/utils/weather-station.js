@@ -6,7 +6,7 @@ const getWeatherStation = async() => {
         if (!weatherCityContainer || !currentWeatherContainer || !hourWeatherContainer) {
             throw new Error("City or current weather not found");
         }
-        const apiKey = "26fd2f7ef9a0452cb9914702262604";
+        const apiKey = "8cf98ec1da984a40b23173434260905";
         const city = "Arequipa";
         const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&aqi=no`);
         const data = await response.json();
