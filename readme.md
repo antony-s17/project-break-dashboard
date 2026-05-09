@@ -13,7 +13,7 @@ The project is composed of 4 independent modules that are later integrated into 
 Each module works independently and is structured with its own HTML, CSS, and JavaScript files.
 
 🚀 Demo
-GithubPages:
+GithubPages: https://antony-s17.github.io/project-break-dashboard/index.html
 
 🛠️ Technologies
 HTML5
